@@ -7,11 +7,8 @@ const NewsPage = () => {
 
   useEffect(() => {
     axios
-      .get(
-        `https://newsapi.org/v2/everything?q=bitcoin&apiKey=53f1001ba24e4395b0ea7ee8558103c4`,
-      )
+      .get("http://localhost:3000/news")
       .then((response) => {
-        console.log(response.data);
         setNews(response.data.articles);
       })
       .catch((error) => {
