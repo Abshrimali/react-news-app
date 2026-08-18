@@ -7,7 +7,7 @@ const NewsPage = () => {
 
   useEffect(() => {
     axios
-      .get("https://server-six-navy-95.vercel.app/news")
+      .get("https://server-six-navy-95.vercel.app/")
       .then((response) => {
         setNews(response.data.articles);
       })

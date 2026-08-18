@@ -4,13 +4,14 @@ import "dotenv/config"
 import cors from "cors"
 
 const app = express();
-app.use(cors())
+app.use(
+  cors({
+    origin: "https://server-six-navy-95.vercel.app/",
+  })
+);
 
 app.get("/", (req, res) => {
-  res.send("hello world");
-});
 
-app.get("/news", async (req, res) => {
   try {
     const response = await axios.get(
       `https://newsapi.org/v2/everything?q=bitcoin&apiKey=${process.env.news_api}`,
