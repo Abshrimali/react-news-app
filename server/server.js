@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 app.get("/news", async (req, res) => {
   try {
     const response = await axios.get(
-      `https://newsapi.org/v2/everything?q=bitcoin&apiKey=${process.env.news_api}`
+      `https://newsapi.org/v2/everything?q=bitcoin&apiKey=53f1001ba24e4395b0ea7ee8558103c4}`
     );
 
     res.json(response.data);
