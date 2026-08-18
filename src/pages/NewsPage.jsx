@@ -8,7 +8,7 @@ const NewsPage = () => {
   useEffect(() => {
     axios
       .get(
-        `https://newsapi.org/v2/everything?q=bitcoin&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`,
+        `https://newsapi.org/v2/everything?q=bitcoin&apiKey=53f1001ba24e4395b0ea7ee8558103c4`,
       )
       .then((response) => {
         console.log(response.data);
