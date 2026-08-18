@@ -5,16 +5,17 @@ import axios from "axios";
 const NewsPage = () => {
   const [news, setNews] = useState([]);
 
-  useEffect(() => {
-    axios
-      .get("https://server-six-navy-95.vercel.app/")
-      .then((response) => {
-        setNews(response.data.articles);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
+useEffect(() => {
+  axios
+    .get("https://server-six-navy-95.vercel.app/news")
+    .then((response) => {
+      console.log(response.data);
+      setNews(response.data.articles);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}, []);
 
   return (
     <Wrapper>
