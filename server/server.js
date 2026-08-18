@@ -15,15 +15,16 @@ app.get("/", (req, res) => {
 app.get("/news", async (req, res) => {
   try {
     const response = await axios.get(
-      `https://newsapi.org/v2/everything?q=bitcoin&apiKey=${process.env.news_api}`,
+      `https://newsapi.org/v2/everything?q=bitcoin&apiKey=${process.env.news_api}`
     );
 
     res.json(response.data);
   } catch (error) {
-    console.error(error);
+    console.error(error.response?.data || error.message);
 
     res.status(500).json({
       message: "Failed to fetch news",
+      error: error.response?.data || error.message,
     });
   }
 });
