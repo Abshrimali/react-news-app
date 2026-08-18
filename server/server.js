@@ -5,9 +5,7 @@ import cors from "cors"
 
 const app = express();
 app.use(
-  cors({
-    origin: "https://server-six-navy-95.vercel.app/",
-  })
+  cors()
 );
 
 app.get("/", (req, res) => {
